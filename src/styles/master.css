@@ -1,0 +1,30 @@
+html, body {
+    margin: 0;
+}
+
+#app {
+    background-image: url('../assets/home3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.social {
+    align-self: flex-end;
+    margin: 0 auto 0 auto;
+    padding: 50px;
+}
+
+.social-icon {
+    padding: 0 20px;
+}
+
+.social #insta, .social #spotify {
+    height: 40px;
+    width: 40px;
+}
