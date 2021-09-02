@@ -1,0 +1,29 @@
+.header-container {
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    width: 75%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 100px;
+    margin: 20px 0;
+    color: #DAD7CD;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon-text {
+    height: 22px;
+    margin: 0 0 10px;
+}
+
+.down-arrow {
+    cursor: pointer;
+    display: contents;
+}
