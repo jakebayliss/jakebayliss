@@ -18,10 +18,6 @@ const SillyAbout = ({primaryColour, secondaryColour}) => {
                 <p style={{ color: primaryColour }}>i stopped that and went to the gym instead,</p>
                 <p style={{ color: primaryColour }}>now i am learning to surf in bondi</p>
             </div>
-            <div style={{ margin: '100px' }}>
-                <p style={{ color: primaryColour }}>this site is just for a bit of fun (press the space bar),</p>
-                <p style={{ color: primaryColour }}>its as ugly or pretty as you can make it :)</p>
-            </div>
             <button className="arrow-container" onClick={() => scroll('#header-container')}>
                 <BsChevronDoubleUp className="arrow" style={{ color: primaryColour }} />
             </button>
