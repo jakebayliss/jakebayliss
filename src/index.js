@@ -5,11 +5,10 @@ import { generateRandomHex } from './ColourGenerator';
 // components
 import Header from './components/Header';
 import SillyAbout from './components/SillyAbout';
+import SeriousAbout from './components/SeriousAbout';
 
 // styles
 import './styles/master.css';
-import './styles/header.css';
-import './styles/mainContent.css';
 
 const App = () => {
     const [primaryColour, setPrimaryColour] = useState(generateRandomHex());
@@ -52,6 +51,7 @@ const App = () => {
     return <div className="container">
         <Header primaryColour={primaryColour} secondaryColour={secondaryColour} />
         <SillyAbout primaryColour={primaryColour} secondaryColour={secondaryColour} />
+        <SeriousAbout />
     </div>
 }
 

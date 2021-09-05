@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { scroll } from '../utils/scrollHelper';
 
+import '../styles/header.css';
+
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { SiLinkedin, SiGithub, SiInstagram, SiSpotify } from 'react-icons/si';
 
@@ -29,7 +31,7 @@ const Header = ({primaryColour, secondaryColour}) => {
                 </a>
             </div>
         </div>
-        <button className="arrow-container" onClick={() => scroll('#main-content-container')}>
+        <button className="arrow-container" onClick={() => scroll('#silly-container')}>
             <BsChevronDoubleDown className="arrow" style={{ color: secondaryColour }} />
         </button>
     </div>

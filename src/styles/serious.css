@@ -1,0 +1,33 @@
+.serious-container {
+    height: 100vh;
+}
+
+.serious-container p, h4, ul {
+    margin: 0;
+}
+
+.content-container {
+    display: flex;
+    padding: 100px;
+}
+
+.pane {
+    width: 50%;
+}
+
+.left {
+    padding-right: 25px;
+}
+
+.right {
+    padding-left: 25px;
+}
+.content-section {
+    margin-bottom: 10px;
+}
+
+.job-titles {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}

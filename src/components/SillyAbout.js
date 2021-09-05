@@ -1,11 +1,13 @@
 import React from 'react';
 import { scroll } from '../utils/scrollHelper';
 
+import '../styles/silly.css';
+
 import { BsChevronDoubleUp } from 'react-icons/bs';
 
 const SillyAbout = ({primaryColour, secondaryColour}) => {
-    return <div id="main-content-container" className="main-content-container" style={{ backgroundColor: secondaryColour }}>
-        <div className="main-content">
+    return <div id="silly-container" className="silly-container" style={{ backgroundColor: secondaryColour }}>
+        <div className="silly-content">
             <div>
                 <p style={{ color: primaryColour }}>hello im jake,</p>
                 <p style={{ color: primaryColour }}>i am a 'full stack' software dev,</p>
