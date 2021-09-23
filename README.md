@@ -1,2 +1,1 @@
-# init-react
-Bare minimum needed for a React app
+:hammer: I am a Software Architect at SSW
