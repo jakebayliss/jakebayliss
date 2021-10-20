@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { generateRandomHex } from './ColourGenerator';
 
 // components
+import Banner from './components/Banner';
 import Header from './components/Header';
 import SillyAbout from './components/SillyAbout';
 import SeriousAbout from './components/SeriousAbout';
@@ -11,6 +12,7 @@ import SeriousAbout from './components/SeriousAbout';
 import './styles/master.css';
 
 const App = () => {
+    console.log(Spot);
     const [primaryColour, setPrimaryColour] = useState(generateRandomHex());
     const [secondaryColour, setSecondaryColour] = useState(generateRandomHex());
     const [keys, setKeys] = useState([]);
@@ -49,6 +51,7 @@ const App = () => {
     }, [keydown]);
 
     return <div className="container">
+        <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} />
         <Header primaryColour={primaryColour} secondaryColour={secondaryColour} />
         <SillyAbout primaryColour={primaryColour} secondaryColour={secondaryColour} />
         <SeriousAbout />

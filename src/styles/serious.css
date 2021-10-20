@@ -1,5 +1,7 @@
 .serious-container {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+    display: flex;
 }
 
 .serious-container p, h4, ul {

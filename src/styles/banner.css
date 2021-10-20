@@ -1,0 +1,19 @@
+.banner-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+}
+
+.link, .logo {
+    margin: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
