@@ -24,7 +24,8 @@
     "file-loader": "^5.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-icons": "^4.2.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^5.3.0",
     "url-loader": "^3.0.0"
   },
   "devDependencies": {

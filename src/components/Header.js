@@ -1,13 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { scroll } from '../utils/scrollHelper';
 
 import '../styles/header.css';
 
-import { BsChevronDoubleDown } from 'react-icons/bs';
+import { BsArrowDownCircleFill } from 'react-icons/bs';
 import { SiLinkedin, SiGithub, SiInstagram, SiSpotify } from 'react-icons/si';
 
 const Header = ({primaryColour, secondaryColour}) => {
     const [iconHovered, setIconHovered] = useState('');
+
+    const arrowScrolledIntoView = useCallback(() => {
+        const element = document.getElementById('arrow-down');
+        const rect = element.getBoundingClientRect();
+        if(rect.y < 500) {
+            element.classList.add("hidden");
+        }
+        else {
+            if(element.classList.contains("hidden")) {
+                element.classList.remove("hidden");
+            }
+        }
+    })
+
+    useEffect(() => {
+        window.addEventListener("scroll", arrowScrolledIntoView);
+        return () => window.removeEventListener("scroll", arrowScrolledIntoView);
+    }, [arrowScrolledIntoView]);
 
     return <div className="header-container" id="header-container" style={{ backgroundColor: primaryColour }}>
         <div>
@@ -32,7 +50,7 @@ const Header = ({primaryColour, secondaryColour}) => {
             </div>
         </div>
         <button className="arrow-container" onClick={() => scroll('#silly-container')}>
-            <BsChevronDoubleDown className="arrow" style={{ color: secondaryColour }} />
+            <BsArrowDownCircleFill id="arrow-down" className="arrow" style={{ color: secondaryColour }} />
         </button>
     </div>
 }

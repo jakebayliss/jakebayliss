@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import { generateRandomHex } from './ColourGenerator';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, Link
+  } from "react-router-dom";
 
 // components
 import Banner from './components/Banner';
-import Header from './components/Header';
-import SillyAbout from './components/SillyAbout';
-import SeriousAbout from './components/SeriousAbout';
+import Home from './pages/Home';
+import Exp from './pages/Exp';
 
 // styles
 import './styles/master.css';
 
 const App = () => {
-    console.log(Spot);
     const [primaryColour, setPrimaryColour] = useState(generateRandomHex());
     const [secondaryColour, setSecondaryColour] = useState(generateRandomHex());
     const [keys, setKeys] = useState([]);
@@ -51,10 +54,15 @@ const App = () => {
     }, [keydown]);
 
     return <div className="container">
-        <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} />
-        <Header primaryColour={primaryColour} secondaryColour={secondaryColour} />
-        <SillyAbout primaryColour={primaryColour} secondaryColour={secondaryColour} />
-        <SeriousAbout />
+        {/* <Router> */}
+            {/* <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} /> */}
+            {/* <Route path="/"> */}
+                <Home primaryColour={primaryColour} secondaryColour={secondaryColour} />
+            {/* </Route> */}
+            {/* <Route path="/exp"> */}
+                {/* <Exp /> */}
+            {/* </Route> */}
+        {/* </Router> */}
     </div>
 }
 

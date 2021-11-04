@@ -45,4 +45,20 @@
     width: 30px;
     height: 30px;
     margin: 0 auto;
+    /* animation: fadein 3s; */
+}
+
+.hidden {
+    opacity: 0;
+    /* animation: fadeout 2s; */
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { Link } from "react-router-dom";
 
 import '../styles/banner.css';
 
@@ -18,13 +19,12 @@ const Banner = ({primaryColour, secondaryColour}) => {
     }, [isScrolledIntoView]);
 
     return <div className="banner-container" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }}>
-        <div className="logo">
-            JB
-        </div>
-        <div className="links">
-            <a className="link">Jake</a>
-            <a className="link">More Jake</a>
-        </div>
+        {/* <div className="logo"> */}
+            {/* <Link to="/">JB 🐍</Link> */}
+        {/* </div> */}
+        {/* <div className="links"> */}
+            {/* <Link to="/exp">Exp</Link> */}
+        {/* </div> */}
     </div>
 }
 
