@@ -11,7 +11,7 @@ env:
   cdnEndpoint: jakebayliss
 
 jobs:
-  buildIaC:
+  build_IaC:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -43,8 +43,9 @@ jobs:
         run: |
           ./Azure/clean.ps1
         shell: pwsh
-  build:
+  build_deploy:
     runs-on: ubuntu-latest
+    needs: buildIaC
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
