@@ -69,14 +69,14 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-              az storage blob upload-batch --account-name ${{storageAccount}} --auth-mode key -d '$web' -s .
+              az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s .
               
       - name: Purge CDN endpoint
         uses: azure/CLI@v1
         with:
           azcliversion: 2.0.72
           inlineScript: |
-             az cdn endpoint purge --content-paths  "/*" --profile-name ${{cdnProfile}} --name ${{cdnEndpoint}} --resource-group ${{resourceGroup}}
+             az cdn endpoint purge --content-paths  "/*" --profile-name ${cdnProfile} --name ${cdnEndpoint} --resource-group ${resourceGroup}
 
     # Azure logout
       - name: logout
