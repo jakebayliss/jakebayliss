@@ -45,7 +45,7 @@ jobs:
         shell: pwsh
   build_deploy:
     runs-on: ubuntu-latest
-    needs: buildIaC
+    needs: build_IaC
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
