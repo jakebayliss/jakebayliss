@@ -14,7 +14,7 @@ if ((Test-Path -Path $armTtk) -eq $false) {
 
 Import-Module "$armTtk\arm-ttk\arm-ttk.psd1"
 
-$results = Test-AzTemplate -TemplatePath .\bicep `
+$results = Test-AzTemplate -TemplatePath .\Azure\bicep `
   -File azuredeploy.json `
   -Skip "Template Should Not Contain Blanks","Location Should Not Be Hardcoded","apiVersions Should Be Recent In Reference Functions","apiVersions Should Be Recent"
 
