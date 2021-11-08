@@ -11,29 +11,66 @@ env:
   cdnEndpoint: jakebayliss
 
 jobs:
+  buildIaC:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      
+      - name: az login
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+      - name: Build bicep files
+      - run: |
+          ./Azure/build.ps1
+        shell: pwsh
+      
+      - name: Test bicep files
+      - run: |
+          ./Azure/test.ps1
+        shell: pwsh
+        
+      - name: Deploy bicep files
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+              ./Azure/deploy.ps1 -resourceGroup $(resourceGroup)
+      
+      - name: Clean bicep files
+      - run: |
+          ./Azure/clean.ps1
+        shell: pwsh
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: azure/login@v1
-      with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+          
+      - name: Install dependencies
+        run: npm ci
+      - run: npm run build --if-present
 
-    - name: Upload to blob storage
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.0.72
-        inlineScript: |
-            az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s .
-    - name: Purge CDN endpoint
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.0.72
-        inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name ${cdnProfile} --name ${cdnEndpoint} --resource-group ${resourceGroup}
+      - name: Upload to blob storage
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+              az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s .
+              
+      - name: Purge CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+             az cdn endpoint purge --content-paths  "/*" --profile-name ${cdnProfile} --name ${cdnEndpoint} --resource-group ${resourceGroup}
 
-  # Azure logout
-    - name: logout
-      run: |
-            az logout
-      if: always()
+    # Azure logout
+      - name: logout
+        run: |
+              az logout
+        if: always()
