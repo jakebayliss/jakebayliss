@@ -37,7 +37,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-              ./Azure/deploy.ps1 -resourceGroup ${{resourceGroup}}
+              ./Azure/deploy.ps1 -resourceGroup ${resourceGroup}
       
       - name: Clean bicep files
         run: |
