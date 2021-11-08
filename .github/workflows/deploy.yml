@@ -18,17 +18,17 @@ jobs:
         uses: actions/checkout@v2
       
       - name: az login
-      - uses: azure/login@v1
+        uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Build bicep files
-      - run: |
+        run: |
           ./Azure/build.ps1
         shell: pwsh
       
       - name: Test bicep files
-      - run: |
+        run: |
           ./Azure/test.ps1
         shell: pwsh
         
@@ -40,7 +40,7 @@ jobs:
               ./Azure/deploy.ps1 -resourceGroup $(resourceGroup)
       
       - name: Clean bicep files
-      - run: |
+        run: |
           ./Azure/clean.ps1
         shell: pwsh
   build:
@@ -53,7 +53,8 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
-      - run: npm run build --if-present
+      - name: npm build
+        run: npm run build --if-present
 
       - name: Upload to blob storage
         uses: azure/CLI@v1
