@@ -2,10 +2,6 @@
 @maxLength(21)
 param appName string
 
-@minLength(2)
-@maxLength(7)
-param environmentName string
-
 param primaryEndpointName string
 param primaryEndpointHostName string
 
@@ -14,9 +10,8 @@ param customDomainName string = ''
 @description('Resource tags for organizing / cost monitoring')
 param tags object
 
-
-var cdnProfileName = toLower('${environmentName}-${appName}')
-var cdnEndpointName = toLower('${environmentName}-${appName}')
+var cdnProfileName = appName
+var cdnEndpointName = appName
 // setting a default so that the arm template validates the customDomain segment length (even though it shouldn't deploy)
 var sanitizedCustomDomainHostName = empty(customDomainName) ? 'should-not-be-deployed' : toLower(customDomainName)
 var sanitizedCustomDomainName = replace(sanitizedCustomDomainHostName, '.', '-')

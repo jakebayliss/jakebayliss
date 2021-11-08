@@ -2,10 +2,6 @@
 @maxLength(21)
 param appName string
 
-@minLength(2)
-@maxLength(7)
-param environmentName string
-
 param location string = resourceGroup().location
 
 @description('Resource tags for organizing / cost monitoring')
@@ -13,7 +9,7 @@ param tags object
 
 // randomness added to the end of storage account names
 var entropy = uniqueString('${subscription().id}${resourceGroup().id}')
-var storageAccountName = replace(replace(toLower(take('${environmentName}${appName}${entropy}', 24)), '-', ''), '_', '')
+var storageAccountName = replace(replace(toLower(take('${appName}${entropy}', 24)), '-', ''), '_', '')
 
 resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   name: storageAccountName
