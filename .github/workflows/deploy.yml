@@ -37,7 +37,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-              ./Azure/deploy.ps1 -resourceGroup $(resourceGroup)
+              ./Azure/deploy.ps1 -resourceGroup ${resourceGroup}
       
       - name: Clean bicep files
         run: |
@@ -46,6 +46,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
