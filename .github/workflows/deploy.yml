@@ -20,9 +20,9 @@ jobs:
       - name: az login
         uses: azure/login@v1
         with:
-          client-id: ${{ secret.AZURE_CLIENTID }}
-          tenant-id: ${{ secret.AZURE_TENANTID }}
-          subscription-id: ${{ secret.AZURE_SUBSCRIPTIONID }}
+          client-id: ${{ secrets.AZURE_CLIENTID }}
+          tenant-id: ${{ secrets.AZURE_TENANTID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTIONID }}
           enable-AzPSSession: true
           
       - name: Build bicep files
