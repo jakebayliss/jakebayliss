@@ -20,9 +20,11 @@ jobs:
       - name: az login
         uses: azure/login@v1
         with:
-          creds: ${{secrets.AZURE_CREDENTIALS}}
+          client-id: ${{ secret.AZURE_CLIENTID }}
+          client-secret: ${{ secret.AZURE_CLIENTSECRET }}
+          tenant-id: ${{ secret.AZURE_TENANTID }}
+          subscription-id: ${{ secret.AZURE_SUBSCRIPTIONID }}
           enable-AzPSSession: true
-          environment: azurecloud
           
       - name: Build bicep files
         run: |
