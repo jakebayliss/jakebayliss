@@ -25,6 +25,8 @@ jobs:
         run: npm ci
       - name: npm build
         run: npm run build --if-present
+      - name: ls
+        run: ls
 
       - name: az login
         uses: azure/login@v1
@@ -36,7 +38,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-              az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s .
+              az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s ./build
               
       - name: Purge CDN endpoint
         uses: azure/CLI@v1
