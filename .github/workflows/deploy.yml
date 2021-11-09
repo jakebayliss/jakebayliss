@@ -6,7 +6,7 @@ on:
 
 env:
   resourceGroup: 'jakebayliss'
-  storageAccount: 'jakebayliss'
+  storageAccount: 'jakebaylissgb5e5yphyxao2'
   cdnProfile: 'jakebayliss'
   cdnEndpoint: 'jakebayliss'
 
