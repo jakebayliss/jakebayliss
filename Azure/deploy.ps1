@@ -4,9 +4,6 @@ Param(
   [Parameter(Mandatory = $true)]
   [String]$resourceGroup,
 
-  [Parameter(Mandatory = $true)]
-  [String]$environmentName,
-
   [Parameter(Mandatory = $false)]
   [Switch]$deploy = $false
 )
@@ -17,9 +14,6 @@ Write-Host "Creating Parameters"
 $parameters = New-Object PSObject -Property @{
   '$schema'      = 'https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#'
   contentVersion = "1.0.0.0"
-  parameters     = @{
-    environmentName    = @{ value = $environmentName }
-  }
 }
 
 if (Test-Path ./azuredeploy.parameters.json) 
@@ -32,8 +26,8 @@ $parameters | ConvertTo-Json -Depth 100 | Out-File ./azuredeploy.parameters.json
 Write-Host "Running What-If on bicep"
 az deployment group what-if `
   --template-file .\Azure\bicep\azuredeploy.bicep `
-  -g $resourceGroup `
-  --parameters '@azuredeploy.parameters.json'
+  -g $resourceGroup 
+  #--parameters '@azuredeploy.parameters.json'
 
 if ($deploy -eq $true) {
   Write-Host "Deploying bicep"
@@ -41,8 +35,8 @@ if ($deploy -eq $true) {
     --template-file .\Azure\bicep\azuredeploy.bicep `
     -g $resourceGroup `
     --name "$($deploymentName)" `
-    --mode Incremental `
-    --parameters '@azuredeploy.parameters.json') |
+    --mode Incremental)|
+    #--parameters '@azuredeploy.parameters.json') |
   ConvertFrom-Json
 
   $output.properties.outputs.staticSiteSettings.value.PSObject.Properties | ForEach-Object {
