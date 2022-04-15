@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import { generateRandomHex } from './ColourGenerator';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route, Link
-  } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // components
 import Banner from './components/Banner';
-import Home from './pages/Home';
-import Exp from './pages/Exp';
+import Home from './pages/home/Home';
+import Exp from './pages/exp/Exp';
+import ChessPage from './pages/chess/index';
 
 // styles
 import './styles/master.css';
@@ -54,15 +51,14 @@ const App = () => {
     }, [keydown]);
 
     return <div className="container">
-        {/* <Router> */}
-            {/* <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} /> */}
-            {/* <Route path="/"> */}
-                <Home primaryColour={primaryColour} secondaryColour={secondaryColour} />
-            {/* </Route> */}
-            {/* <Route path="/exp"> */}
-                {/* <Exp /> */}
-            {/* </Route> */}
-        {/* </Router> */}
+        <BrowserRouter>
+            <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} />
+            <Routes>
+                <Route path="/" element={<Home primaryColour={primaryColour} secondaryColour={secondaryColour} />} />
+                <Route path="exp" element={<Exp />} />
+                <Route path="chess" element={<ChessPage />} />
+            </Routes>
+        </BrowserRouter>
     </div>
 }
 

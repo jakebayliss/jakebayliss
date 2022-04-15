@@ -19,12 +19,13 @@ const Banner = ({primaryColour, secondaryColour}) => {
     }, [isScrolledIntoView]);
 
     return <div className="banner-container" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }}>
-        {/* <div className="logo"> */}
-            {/* <Link to="/">JB 🐍</Link> */}
-        {/* </div> */}
-        {/* <div className="links"> */}
-            {/* <Link to="/exp">Exp</Link> */}
-        {/* </div> */}
+        <div className="logo">
+            <Link to="/">JB 🐍</Link>
+        </div>
+        <div className="links">
+            <Link to="exp">Exp</Link>
+            <Link to="chess">Chess</Link>
+        </div>
     </div>
 }
 
