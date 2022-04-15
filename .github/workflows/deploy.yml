@@ -32,20 +32,13 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      
-      - name: az account set
-        uses: azure/CLI@v1
-        with: 
-            azcliversion: latest
-            inlineScript: |
-                az account set -s b30a387a-cbd9-4b9e-b4fb-6bb8c9ace2c5
           
       - name: Upload to blob storage
         uses: azure/CLI@v1
         with:
           azcliversion: latest
           inlineScript: |
-              az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s ./build
+              az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s ./build --overwrite
               
       - name: Purge CDN endpoint
         uses: azure/CLI@v1
