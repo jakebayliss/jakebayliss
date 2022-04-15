@@ -36,21 +36,21 @@ jobs:
       - name: az account set
         uses: azure/CLI@v1
         with: 
-            azcliversion: 2.0.72
+            azcliversion: latest
             inlineScript: |
                 az account set -s b30a387a-cbd9-4b9e-b4fb-6bb8c9ace2c5
           
       - name: Upload to blob storage
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: latest
           inlineScript: |
               az storage blob upload-batch --account-name ${storageAccount} --auth-mode key -d '$web' -s ./build
               
       - name: Purge CDN endpoint
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: latest
           inlineScript: |
              az cdn endpoint purge --content-paths  "/*" --profile-name ${cdnProfile} --name ${cdnEndpoint} --resource-group ${resourceGroup}
 
