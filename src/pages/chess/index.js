@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BlobServiceClient } from '@azure/storage-blob';
-import streamToBuffer from 'stream-to-buffer';
 import { Chess } from 'chess.js';
 import { Chessboard } from "react-chessboard";
 
@@ -131,6 +130,7 @@ const ChessPage = () => {
           animationDuration={200}
           boardWidth={500}
           position={game.fen()}
+          boardOrientation={game.turn() == 'w' ? 'white' : 'black'}
           onMouseOverSquare={onMouseOverSquare}
           onMouseOutSquare={onMouseOutSquare}
           onSquareClick={onSquareClick}

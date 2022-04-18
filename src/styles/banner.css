@@ -12,8 +12,12 @@
     display: flex;
 }
 
-.link, .logo {
+a, .logo {
     margin: 10px 20px;
     font-size: 20px;
     font-weight: 500;
+}
+
+a:hover, .logo:hover, .active {
+    text-decoration: underline;
 }

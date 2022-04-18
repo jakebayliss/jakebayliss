@@ -6,6 +6,7 @@ import '../styles/banner.css';
 const Banner = ({primaryColour, secondaryColour}) => {
 
     const [isSecondaryColour, setIsSecondaryColour] = useState(true);
+    const [activeLink, setActiveLink] = useState(window.location.pathname);
 
     const isScrolledIntoView = useCallback(() => {
         const element = document.getElementById('silly-container');
@@ -18,13 +19,15 @@ const Banner = ({primaryColour, secondaryColour}) => {
         return () => window.removeEventListener("scroll", isScrolledIntoView);
     }, [isScrolledIntoView]);
 
-    return <div className="banner-container" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }}>
+    return <div className="banner-container">
         <div className="logo">
-            <Link to="/">JB 🐍</Link>
+            <Link to="/" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }}>JB 🐍</Link>
         </div>
         <div className="links">
-            <Link to="exp">Exp</Link>
-            <Link to="chess">Chess</Link>
+            <Link to="exp" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }} className={activeLink == '/exp' ? 'active' : ''}
+                onClick={() => setActiveLink('/exp')}>Exp</Link>
+            <Link to="chess" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }} className={activeLink == '/chess' ? 'active' : ''}
+                onClick={() => setActiveLink('/chess')}>Chess</Link>
         </div>
     </div>
 }
