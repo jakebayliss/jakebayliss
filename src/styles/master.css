@@ -22,6 +22,10 @@ body::-webkit-scrollbar {
     flex-direction: column;
 }
 
+p {
+    margin: 0;
+}
+
 a {
     text-decoration: none;
 }

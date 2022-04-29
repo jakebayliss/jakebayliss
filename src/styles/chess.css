@@ -2,3 +2,15 @@
     margin: auto;
     padding: 50px;
 }
+
+.turn {
+    padding: 10px
+}
+
+.history {
+    display: flex;
+}
+
+.history div {
+    padding: 0 10px
+}
