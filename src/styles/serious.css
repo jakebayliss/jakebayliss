@@ -4,6 +4,19 @@
     display: flex;
 }
 
+.content-section-title {
+    padding: 1rem 1.5rem;
+    margin: 0;
+}
+
+.accordion-button {
+    color: #13505B;
+}
+
+.accordion-button div {
+    width: 98%;
+}
+
 .serious-container p, h4, ul {
     margin: 0;
 }

@@ -167,7 +167,6 @@ const ChessPage = () => {
         ref={chessboardRef}
       />
 
-
       <div className='info'>
         <div className='turn'>
           <p>{game.turn() == 'w' ? 'White' : 'Black'}s turn</p>
