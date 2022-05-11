@@ -7,6 +7,5 @@ Hey! 👋
 * ⚽ I have played football for 20 years
 
 * 💡 These are next in line of things I want to learn
-  * Angular
   * Blazor
   * React Native
