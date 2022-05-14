@@ -12,10 +12,11 @@ import ChessPage from './pages/chess/index';
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/master.css';
+import './styles/bootstrapOverride.css';
 
 const App = () => {
-    const [primaryColour, setPrimaryColour] = useState('#D7D9CE'/*generateRandomHex()*/);
-    const [secondaryColour, setSecondaryColour] = useState('#13505B'/*generateRandomHex()*/);
+    const [primaryColour, setPrimaryColour] = useState('#1f2124'/*generateRandomHex()*/);
+    const [secondaryColour, setSecondaryColour] = useState('#D6DBD2'/*generateRandomHex()*/);
     const [keys, setKeys] = useState([]);
 
     const keydown = useCallback(e => {
@@ -51,13 +52,13 @@ const App = () => {
         return () => window.removeEventListener("keydown", keydown);
     }, [keydown]);
 
-    return <div style={{backgroundColor: primaryColour, color: secondaryColour}}>
+    return <div style={{backgroundColor: primaryColour, color: secondaryColour, minHeight: '100vh'}}>
         <div className="container">
             <BrowserRouter>
                 <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} />
                 <Routes>
                     <Route path="/" element={<Home primaryColour={primaryColour} secondaryColour={secondaryColour} />} />
-                    <Route path="exp" element={<Exp secondaryColour={secondaryColour} />} />
+                    <Route path="exp" element={<Exp primaryColour={primaryColour} secondaryColour={secondaryColour} />} />
                     <Route path="chess" element={<ChessPage />} />
                 </Routes>
             </BrowserRouter>

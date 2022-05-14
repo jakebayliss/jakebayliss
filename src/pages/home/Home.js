@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { scroll } from '../../utils/scrollHelper';
 
 import '../../styles/header.css';
-
-import { BsArrowDownCircleFill } from 'react-icons/bs';
 import { SiLinkedin, SiGithub, SiInstagram, SiSpotify } from 'react-icons/si';
 
 const Home = ({primaryColour, secondaryColour}) => {
@@ -31,9 +28,6 @@ const Home = ({primaryColour, secondaryColour}) => {
                 </a>
             </div>
         </div>
-        <button className="arrow-container" onClick={() => scroll('#silly-container')}>
-            <BsArrowDownCircleFill id="arrow-down" className="arrow" style={{ color: secondaryColour }} />
-        </button>
     </div>
 }
 

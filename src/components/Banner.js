@@ -28,7 +28,7 @@ const Banner = ({primaryColour, secondaryColour}) => {
             <Link to="exp" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }} className={activeLink == '/exp' ? 'active' : ''}
                 onClick={() => setActiveLink('/exp')}>Exp</Link>
             <Link to="chess" style={{ color: isSecondaryColour ? secondaryColour : primaryColour }} className={activeLink == '/chess' ? 'active' : ''}
-                onClick={() => setActiveLink('/chess')}>Chess</Link>
+                onClick={() => setActiveLink('/chess')}>Chess ♟️</Link>
         </div>
     </div>
 }
