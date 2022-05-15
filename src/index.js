@@ -53,7 +53,7 @@ const App = () => {
     }, [keydown]);
 
     return <div style={{backgroundColor: primaryColour, color: secondaryColour, minHeight: '100vh'}}>
-        <div className="container">
+        <div>
             <BrowserRouter>
                 <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} />
                 <Routes>

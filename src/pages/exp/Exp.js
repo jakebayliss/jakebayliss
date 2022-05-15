@@ -5,12 +5,12 @@ import { Accordion } from 'react-bootstrap';
 import '../../styles/exp.css';
 
 const Exp = ({primaryColour, secondaryColour}) => {
-    return <div className="container" style={{marginTop: '60px'}}>
+    return <div className="container" style={{paddingTop: '60px'}}>
         <div className="container-sm">
             <div className='content-section-title-container'>
                 <h3 className='content-section-title'>Experience 📈</h3>
             </div>
-            <Accordion flush alwaysOpen>
+            <Accordion flush>
                 <Accordion.Item eventKey='0' style={{backgroundColor: 'transparent'}}>
                     <Accordion.Header>
                         <div style={{display: 'block'}}>
