@@ -5,52 +5,13 @@ DAD7CD Text
 2A9D8F secondary
 */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html, body {
     margin: 0;
 }
-
-.ocean {
-    height: 5%;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: #015871;
-  }
-  
-  .wave {
-    background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
-    position: absolute;
-    top: -198px;
-    width: 6400px;
-    height: 198px;
-    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-    transform: translate3d(0, 0, 0);
-  }
-  
-  .wave:nth-of-type(2) {
-    top: -175px;
-    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
-    opacity: 1;
-  }
-  
-  @keyframes wave {
-    0% {
-      margin-left: 0;
-    }
-    100% {
-      margin-left: -1600px;
-    }
-  }
-  @keyframes swell {
-    0%,
-      100% {
-      transform: translate3d(0, -25px, 0);
-    }
-    50% {
-      transform: translate3d(0, 5px, 0);
-    }
-  }
 
 body::-webkit-scrollbar {
     display: none;
@@ -58,11 +19,6 @@ body::-webkit-scrollbar {
 
 #app {
     font-family: 'Segoe UI';
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
 }
 
 p {
@@ -73,6 +29,76 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: red;
+.social {
+    position: absolute;
+    animation: fadein-sm 2s ease forwards;
+    animation-delay: calc(var(--order) * 1000ms);
+    left: 0;
+    margin-left: calc(0.75rem / 2);
+}
+
+.social::after {
+    content: '';
+    height: 34px;
+    width: 1px;
+    background-color: rgb(163 230 53);
+    display: flex;
+    margin-left: calc(2rem - 2px);
+}
+
+.social::before {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .social {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        animation: fadein-b 2s ease forwards;
+        margin-left: 0;
+    }
+
+    .social::after {
+        display: none;
+    }
+
+    .social::before {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .social {
+        animation: fadein 2s ease forwards;
+        animation-delay: calc(var(--order) * 1000ms);
+    }
+
+    .social::before {
+        content: '';
+        height: 34px;
+        width: 1px;
+        background-color: rgb(163 230 53);
+        display: flex;
+        margin-left: calc(2rem - 2px);
+    }
+
+    .social::after {
+        display: none;
+    }
+}
+
+@keyframes fadein {
+    from { bottom: 100%; }
+    to   { bottom: 65%; }
+}
+
+@keyframes fadein-sm {
+    from { top: 100%; }
+    to   { top: 70%; }
+}
+
+@keyframes fadein-b {
+    from { top: 100%; }
+    to   { top: 90%; }
 }
