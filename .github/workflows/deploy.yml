@@ -25,7 +25,7 @@ jobs:
         run: npm ci
         
       - name: tailwind
-        run: npx tailwindcss -i ./src/styles/master.css -o ./output.css
+        run: npx tailwindcss -i ./src/styles/master.css -o ./build/output.css
         
       - name: npm build
         run: npm run build --if-present
