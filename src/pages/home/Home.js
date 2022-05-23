@@ -37,7 +37,7 @@ const Home = ({primaryColour, secondaryColour}) => {
                 <span className={`${aPressed ? 'text-lime-400' : ''}`}>a</span>
                 <span className={`${kPressed ? 'text-lime-400' : ''}`}>k</span>
                 <span className={`${ePressed ? 'text-lime-400' : ''}`}>e</span> Bayliss</h1>
-            <div className='mt-8 text-sm sm:text-lg'>
+            <div className='mt-12 text-sm sm:text-lg'>
                 <button className={`m-0 sm:m-2 p-2 px-3 cursor-pointer hover:bg-zinc-900 rounded-md focus:outline-none focus:ring-1 focus:ring-lime-300 ${active == 'developer' ? 'bg-zinc-900' : ''}`}
                     onClick={() => setActive('developer')}>Full stack developer</button>
                 <button className={`m-0 sm:m-2 p-2 px-3 cursor-pointer hover:bg-zinc-900 rounded-md focus:outline-none focus:ring-1 focus:ring-lime-300 ${active == 'gamer' ? 'bg-zinc-900' : ''}`}
@@ -49,18 +49,19 @@ const Home = ({primaryColour, secondaryColour}) => {
             </div>
             <div className='mt-4 sm:mt-16 px-10 lg:px-32'>
                 <div style={{display: active == 'developer' ? 'block' : 'none'}}>
-                    <p className='inline'>I am a full stack developer working with .NET and React, among many others! Check out more </p>
-                        <Link to="exp" className="text-lime-300 hover:text-lime-400 hover:underline"
-                            onClick={() => setActiveLink('/exp')}>here</Link><br />
+                    <p>I am a full stack developer working with .NET and React, among many others!</p>
+                    <p>Check out more <Link to="exp" className="text-lime-300 hover:text-lime-400 hover:underline"
+                            onClick={() => setActiveLink('/exp')}>here</Link></p>
+                        <br />
                 </div>
                 <div style={{display: active == 'gamer' ? 'block' : 'none'}}>
-                    <p>Back in the day (3-4 years ago), I was a competitive gamer, playing each Call of Duty since MW2, also getting pretty good at Rocket League, Fortnite, Overwatch, Valorant, Runescape</p>
+                    <p>Very big on competitive gaming - Call of Duty, Overwatch, Valorant, Rocket League and many more</p>
                 </div>
                 <div style={{display: active == 'footballer' ? 'block' : 'none'}}>
-                    <p>I've been playing football since I was 5, getting old and knees are wearing out now...</p>
+                    <p>I've been playing football since I was about 5 as a center midfielder</p>
                 </div>
                 <div style={{display: active == 'surfer' ? 'block' : 'none'}}>
-                    <p>I have recently moved to Bondi where I have been learning to surf - still awful but it's great exercise and fun!</p>
+                    <p>I've recently moved to Bondi where I have been learning to surf - still awful but it's great exercise and fun!</p>
                 </div>
             </div>
         </div>

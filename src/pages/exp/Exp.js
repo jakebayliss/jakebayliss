@@ -30,7 +30,7 @@ const Exp = ({primaryColour, secondaryColour}) => {
                         <br /><br />
                         <p>🦾 <b>Backend</b> - Worked with core Microsoft back-end technologies including .NET Core, .NET 5 + 6 including WebAPI and Azure Functions, SQL.</p>
                         <p>🌟 <b>Frontend</b> - Worked with front-end web technologies/frameworks, primarily React + Typescript + Webpack, also including the standard HTML, CSS, Javascript.</p>
-                        <p>☁️ <b>Cloud</b> + Cloud Services - Development with Azure resources such as Function and Logic apps, Azure storage options (SQL, Blob) and other Azure services, including Application Insights.</p>
+                        <p>☁️ <b>Cloud + Cloud Services</b> - Development with Azure resources such as Function and Logic apps, Azure storage options (SQL, Blob) and other Azure services, including Application Insights.</p>
                         <p>🚀 <b>DevOps</b> - Automated CI/CD using DevOps Pipelines and GitHub Actions with bicep.</p>
                         <p>⚙️ <b>Power Platform</b> - Creating and maintaining Model-Driven App solutions, Canvas Apps and Flows.</p>
                     </div>
@@ -57,7 +57,7 @@ const Exp = ({primaryColour, secondaryColour}) => {
                 </div>
             </div>
         </div>
-        <div>
+        <div className='mb-4'>
             <div className='m-4'>
                 <h3 className='text-2xl m-2'>Education 🎓</h3>
             </div>

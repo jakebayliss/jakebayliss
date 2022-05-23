@@ -19,7 +19,7 @@ const App = () => {
     return <div style={{backgroundColor: primaryColour, color: secondaryColour, minHeight: '100vh'}}>
         <BrowserRouter>
             <Banner primaryColour={primaryColour} secondaryColour={secondaryColour} />
-            <div className='w-100 px-5 sm:px-10 md:px-20 lg:px-32'>
+            <div className='w-100 px-5 sm:px-10 md:px-20 lg:px-32 pb-4'>
                 <Routes>
                     <Route path="/" element={<Home primaryColour={primaryColour} secondaryColour={secondaryColour} />} />
                     <Route path="exp" element={<Exp primaryColour={primaryColour} secondaryColour={secondaryColour} />} />
