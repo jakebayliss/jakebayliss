@@ -24,11 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: npm build
-        run: npm run build --if-present
-        
       - name: tailwind
         run: npx tailwindcss -i ./src/styles/master.css -o ./output.css
+        
+      - name: npm build
+        run: npm run build --if-present
 
       - name: az login
         uses: azure/login@v1
