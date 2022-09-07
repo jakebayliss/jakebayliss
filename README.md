@@ -8,6 +8,6 @@ Hey! 👋
 
 * 💡 These are next in line of things I want to learn
   * Blazor
-  * React Native
+  * .NET MAUI
 
 [![Jake's github stats](https://github-readme-stats.vercel.app/api?username=jakebayliss&theme=dark)](https://github.com/jakebayliss/github-readme-stats)
