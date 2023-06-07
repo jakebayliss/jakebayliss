@@ -1,13 +1,13 @@
 Hey! 👋
 
-* 🔨 I am a Software Architect at [SSW](https://www.ssw.com.au/people/jake-bayliss)
+I am a Software Engineer at [SSW](https://www.ssw.com.au/people/jake-bayliss)
 
-* 📍 I recently moved to Sydney from New Zealand
+Currently learning: 
+  * ♟️ Chess
+  * 🏄‍♂️ Surfing
 
-* ⚽ I have played football for 20 years
-
-* 💡 These are next in line of things I want to learn
-  * Blazor
+Want to learn:
+  * 🔥 Blazor
   * .NET MAUI
 
 [![Jake's github stats](https://github-readme-stats.vercel.app/api?username=jakebayliss&theme=dark)](https://github.com/jakebayliss/github-readme-stats)
