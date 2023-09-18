@@ -9,3 +9,5 @@ Currently learning:
 Want to learn:
   * 🔥 Blazor
   * .NET MAUI
+
+[![Adam's github stats](https://github-readme-stats.vercel.app/api?username=jakebayliss&theme=light)](https://github.com/jakebayliss/github-readme-stats)
