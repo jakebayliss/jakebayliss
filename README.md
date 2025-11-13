@@ -9,5 +9,3 @@ When I'm not wrangling code, you might find me:
 - 📚 Reading
 
 I enjoy making messy systems behave, building scalable solutions, and occasionally laughing at my own code 😅
-
-[![Jake's github stats](https://github-readme-stats.vercel.app/api?username=jakebayliss&theme=light)](https://github.com/jakebayliss/github-readme-stats)
